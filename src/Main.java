@@ -3,7 +3,7 @@ import net.sourceforge.jFuzzyLogic.rule.FuzzyRuleSet;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        try {
+        /*try {
             String fileName = args[0];
             double frontSensor = Double.parseDouble(args[1]);
             double rightSensor = Double.parseDouble(args[2]);
@@ -25,6 +25,7 @@ public class Main {
 
 //graficzna prezentacja wyjscia
             fuzzyRuleSet.getVariable("angle").chartDefuzzifier(true);
+            System.out.println(fuzzyRuleSet.getVariable("angle").getLatestDefuzzifiedValue());
 
 //System.out.println(fuzzyRuleSet);
 
@@ -34,6 +35,15 @@ public class Main {
             System.out.println("Niepoprawny parametr. Przyklad: java FuzzyExample string<plik_fcl> int<poziom natezenia> int<pora dnia>");
         } catch (Exception ex) {
             System.out.println(ex.toString());
+        }*/
+
+        Simulation simulation = new Simulation(args[0]);
+
+        try {
+            simulation.start();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            e.printStackTrace();
         }
     }
 
